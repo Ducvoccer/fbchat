@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*- 
 import json
-from fbchat import log, Client
-from fbchat.models import *
+from VoccerClient import VoccerClient
 # import logging
 # logging.basicConfig(level=logging.DEBUG)
 
@@ -17,9 +16,7 @@ try:
         session_cookies = json.load(f)
 except Exception as e:
     print(e)
-    print('comehere')
 
-client = Client(email, password, user_agent=user_agent, session_cookies=session_cookies)
-
+client = VoccerClient(email, password, user_agent=user_agent, session_cookies=session_cookies)
 
 client.listen()
