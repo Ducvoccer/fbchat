@@ -25,17 +25,5 @@ class VoccerClient(Client):
 
         while True:
             if not self.listening or not self.doOneListen():
-                break
-
-            time_current = time.time()
-            if time_current - time_start > 300:
-                with open('flag', 'w') as f:
-                    f.write('0')
-            if time_current < time_start:
-                if time_current > 100:
-                    break
-            else:
-                if (time_current - time_start) > 800:
-                    break
-                
+                break    
         self.stopListening()
