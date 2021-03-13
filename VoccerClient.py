@@ -7,7 +7,7 @@ import random
 other_text = '🙂 Xin Chào. Tôi là Bot chat của Trong Duc - Voccer. \n- Hiện tại anh ấy không thể rep tin nhắn ngay được. \n- Nếu xem tử vi gõ /tuvi <tuổi>; ví dụ: /tuvi sửu. \n-Nếu xem cung hoàng đạo gõ /hoangdao <cung>; \n ví dụ: /hoangdao song ngư\n- xem lịch gõ /lich'
 
 time_start = time.time()
-
+print(time_start)
 class VoccerClient(Client):
     def onMessage(self, author_id, message_object, thread_id, thread_type, **kwargs):
         sleep = random.randint(2, 10)
@@ -17,6 +17,8 @@ class VoccerClient(Client):
                       thread_id=thread_id,
                       thread_type=thread_type)
     def listen_custom(self, markAlive=None):
+        global time_start
+
         if markAlive is not None:
             self.setActiveStatus(markAlive)
 
@@ -26,7 +28,6 @@ class VoccerClient(Client):
         while True:
             if not self.listening or not self.doOneListen():
                 break
-
             time_current = time.time()
             if time_current - time_start > 300:
                 with open('flag', 'w') as f:

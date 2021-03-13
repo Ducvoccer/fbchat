@@ -14,12 +14,12 @@ password = ''
 user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36"
 
 with open('flag', 'r') as f:
-    flag = (int)f.read()
+    flag = (int)(f.read())
     if flag == 1:
         sys.exit()
     else:
         with open('flag', 'w') as f:
-        f.write('1')
+            f.write('1')
 
 # Load session đăng nhập từ trước nếu co
 session_cookies = ''
@@ -28,7 +28,6 @@ try:
         session_cookies = json.load(f)
 except Exception as e:
     print(e)
-
 
 client = VoccerClient(email, password, user_agent=user_agent, session_cookies=session_cookies)
 
