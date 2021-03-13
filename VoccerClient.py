@@ -10,7 +10,7 @@ time_start = time.time()
 print(time_start)
 class VoccerClient(Client):
     def onMessage(self, author_id, message_object, thread_id, thread_type, **kwargs):
-        sleep = random.randint(2, 10)
+        sleep = random.randint(2, 5)
         if author_id != self.uid:
             time.sleep(sleep)
             self.send(Message(text=other_text),
@@ -28,11 +28,5 @@ class VoccerClient(Client):
         while True:
             if not self.listening or not self.doOneListen():
                 break
-            time_current = time.time()
-            if time_current - time_start > 300:
-                with open('flag', 'w') as f:
-                    f.write('0')
-            if time_current < time_start:
-                time_start = -200
                 
         self.stopListening()
