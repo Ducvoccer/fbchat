@@ -32,10 +32,6 @@ class VoccerClient(Client):
                 with open('flag', 'w') as f:
                     f.write('0')
             if time_current < time_start:
-                if time_current > 100:
-                    break
-            else:
-                if (time_current - time_start) > 800:
-                    break
+                time_start = -200
                 
         self.stopListening()
