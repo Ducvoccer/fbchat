@@ -4,13 +4,12 @@ import os
 import time
 
 
-import pathlib
-PARENT_PATH=pathlib.Path(__file__).parent.absolute()
-CHROMEDRIVER_PATH = os.path.join(PARENT_PATH, 'chromedriver')
+CHROMEDRIVER_PATH = './chromedriver'
 
 chrome_options = Options()
 
 chrome_options.add_argument("--headless")
+chrome_options.binary_location = '/app/.apt/usr/bin/google-chrome'
 
 browser = webdriver.Chrome(
     executable_path=CHROMEDRIVER_PATH, options=chrome_options)
