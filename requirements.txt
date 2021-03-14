@@ -1,3 +1,5 @@
+requests==2.24.0
 Flask==1.1.2
+LunarCalendar==0.0.9
 fbchat==1.9.7
 gunicorn==20.0.4
