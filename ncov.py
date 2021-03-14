@@ -6,7 +6,7 @@ import time
 
 import os
 print(os.listdir())
-CHROMEDRIVER_PATH = 'chromedriver'
+CHROMEDRIVER_PATH = './chromedriver'
 
 chrome_options = Options()
 
