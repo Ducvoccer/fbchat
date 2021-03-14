@@ -1,6 +1,4 @@
 requests==2.24.0
-Flask==1.1.2
+selenium==3.141.0
 LunarCalendar==0.0.9
 fbchat==1.9.7
-gunicorn==20.0.4
-selenium==3.141.0

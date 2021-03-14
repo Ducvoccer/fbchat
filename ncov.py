@@ -3,14 +3,14 @@ from selenium.webdriver.chrome.options import Options
 
 import time
 
-CHROMEDRIVER_PATH = './chromedriver'
+CHROMEDRIVER_PATH = 'chromedriver'
 
 chrome_options = Options()
 
 chrome_options.add_argument("--headless")
 
 browser = webdriver.Chrome(
-    executable_path='./chromedriver', options=chrome_options)
+    executable_path=CHROMEDRIVER_PATH, options=chrome_options)
 
 
 def get_ncov():
