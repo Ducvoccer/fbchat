@@ -19,7 +19,7 @@ def get_ncov():
     time.sleep(1)
     number_elements = browser.find_elements_by_xpath('//span[@class="font24"]')
     numbers = [e.text for e in number_elements if e.text]
-    browser.close()
+    browser.quit()
     ncov_info = '\
 Việt Nam:\n\
 \tSố ca nhiễm: {0}\n\
