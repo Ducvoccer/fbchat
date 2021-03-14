@@ -1,12 +1,12 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-
+import os
 import time
 
 
-import os
-print(os.listdir())
-CHROMEDRIVER_PATH = './chromedriver'
+import pathlib
+PARENT_PATH=pathlib.Path(__file__).parent.absolute()
+CHROMEDRIVER_PATH = os.path.join(PARENT_PATH, 'chromedriver')
 
 chrome_options = Options()
 
