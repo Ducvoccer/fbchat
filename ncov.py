@@ -3,6 +3,9 @@ from selenium.webdriver.chrome.options import Options
 
 import time
 
+
+import os
+print(os.listdir())
 CHROMEDRIVER_PATH = 'chromedriver'
 
 chrome_options = Options()
@@ -11,7 +14,6 @@ chrome_options.add_argument("--headless")
 
 browser = webdriver.Chrome(
     executable_path=CHROMEDRIVER_PATH, options=chrome_options)
-
 
 def get_ncov():
     browser.get('https://ncov.moh.gov.vn/')
