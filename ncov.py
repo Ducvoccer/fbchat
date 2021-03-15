@@ -9,17 +9,18 @@ CHROMEDRIVER_PATH = './chromedriver'
 chrome_options = Options()
 
 chrome_options.add_argument("--headless")
-# chrome_options.binary_location = '/app/.apt/usr/bin/google-chrome'
 
 browser = webdriver.Chrome(
     executable_path=CHROMEDRIVER_PATH, options=chrome_options)
 
 def get_ncov():
     browser.get('https://ncov.moh.gov.vn/')
-    time.sleep(1)
-    number_elements = browser.find_elements_by_xpath('//span[@class="font24"]')
+    while True:
+        number_elements =  browser.find_elements_by_xpath('//span[@class="font24"]')
+        if len(number_elements) > 0 and number_elements[0].is_displayed():
+            break
     numbers = [e.text for e in number_elements if e.text]
-    browser.quit()
+    # browser.quit()
     ncov_info = '\
 Việt Nam:\n\
 \tSố ca nhiễm: {0}\n\

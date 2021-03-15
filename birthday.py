@@ -20,11 +20,11 @@ class Birthday():
         day = today.split('/')[0]
         month = today.split('/')[1]
         year = today.split('/')[2]
-        
+
         return day, month, year
-        
-  def check_birthday(self):
-       with open('birthday', 'r') as f:
+
+    def check_birthday(self):
+        with open('birthday', 'r') as f:
             birthday = f.read().split('\n')
         for b in birthday:
             if b == '':

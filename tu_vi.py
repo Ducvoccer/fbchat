@@ -23,7 +23,7 @@ class TuVi():
                     set_attributes.get('cantrong')
                 )
         except:
-            loi_phan = 'Có thể con giáp bạn nhập bị sai :('
+            loi_phan = 'Có thể con giáp bạn nhập bị sai :( Tí, sửu, dần, mão, thìn, tị, ngọ, mùi, thân, dậu, tuất, hợi'
 
         return loi_phan
 
