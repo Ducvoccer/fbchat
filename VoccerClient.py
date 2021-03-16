@@ -8,7 +8,7 @@ import random
 import time
 from weather import get_weather
 from ncov import get_ncov
-
+from jokes import get_joke
 
 other_text = '🙂 Xin Chào. Tôi là Bot chat\
 \n- tuvi <tuoi>: Xem tử vi theo tuổi\
@@ -64,6 +64,12 @@ class VoccerClient(Client):
                 elif 'covid' in message_text:
                     infor = get_ncov()
                     return self.send(Message(text=infor),
+                                     thread_id=thread_id,
+                                     thread_type=thread_type
+                                     )
+                elif 'joke' in message_text:
+                    joke = get_joke()
+                    return self.send(Message(text=joke),
                                      thread_id=thread_id,
                                      thread_type=thread_type
                                      )
