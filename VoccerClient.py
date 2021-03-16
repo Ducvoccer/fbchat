@@ -15,7 +15,9 @@ other_text = '🙂 Xin Chào. Tôi là Bot chat\
 \n- hoangdao <cung>: Xem cung hoàng đạo\
 \n- lich: Xem lịch\
 \n- thoitiet <thanhpho>: Xem thời tiết\
-\n- covid: Xem thông tin dịch covid'
+\n- covid: Xem thông tin dịch covid\
+\n- joke: 1 mẩu truyện cười'\
+
 
 
 class VoccerClient(Client):
