@@ -3,3 +3,4 @@ selenium==3.141.0
 LunarCalendar==0.0.9
 fbchat==1.9.7
 gunicorn==20.0.4
+Flask==1.1.2
