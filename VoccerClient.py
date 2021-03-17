@@ -22,10 +22,8 @@ other_text = '🙂 Xin Chào. Tôi là Bot chat\
 
 
 class VoccerClient(Client):
-
     def onMessage(self, author_id, message_object, thread_id, thread_type, **kwargs):
         sleep = random.randint(2, 5)
-
         if author_id != self.uid:
             time.sleep(sleep)
             if message_object.text:
