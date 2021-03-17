@@ -9,6 +9,7 @@ import time
 from weather import get_weather
 from ncov import get_ncov
 from jokes import get_joke
+from calendar_ import Calendar
 
 other_text = '🙂 Xin Chào. Tôi là Bot chat\
 \n- tuvi <tuoi>: Xem tử vi theo tuổi\
@@ -49,15 +50,11 @@ class VoccerClient(Client):
                     self.send(Message(text=loi_phan),
                               thread_id=thread_id, thread_type=thread_type)
                 elif 'lich' in message_text:
-                    solar_today = datetime.date.today()
-                    lunar_today = Converter.Solar2Lunar(
-                        Solar(solar_today.year, solar_today.month, solar_today.day))
-                    return self.send(Message(text="Hôm nay, \nDương lịch: {}-{}-{}\nÂm lịch: {}-{}-{}".format(solar_today.day, solar_today.month, solar_today.year, lunar_today.day, lunar_today.month, lunar_today.year)),
-                                     thread_id=thread_id,
-                                     thread_type=thread_type
-                                     )
+                    calendar = Calendar()
+                    self.send(Message(text=calendar.show_result()),
+                              thread_id=thread_id, thread_type=thread_type)
                 elif 'thoitiet' in message_text:
-                    location = message_text[len('/thoitiet'):].strip()
+                    location = message_text[len('thoitiet'):].strip()
                     weather = get_weather(location)
                     return self.send(Message(text=weather),
                                      thread_id=thread_id,
