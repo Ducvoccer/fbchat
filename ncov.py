@@ -33,3 +33,5 @@ Thế giới:\n\
 \tKhỏi: {6}\n\
 \tTử Vong: {7}\n'.format(numbers[0], numbers[1], numbers[2], numbers[3], numbers[4], numbers[5], numbers[6], numbers[7])
     return ncov_info
+
+print(get_ncov())

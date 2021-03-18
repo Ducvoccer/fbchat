@@ -7,8 +7,8 @@ from lunarcalendar import Converter, Solar, Lunar
 import random
 import time
 from weather import get_weather
-from ncov import get_ncov
-from jokes import get_joke
+from ncov_bs import get_ncov
+from jokes_bs import get_joke
 from calendar_ import Calendar
 
 other_text = '🙂 Xin Chào. Tôi là Bot chat\
