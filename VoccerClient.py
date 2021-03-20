@@ -7,7 +7,7 @@ from lunarcalendar import Converter, Solar, Lunar
 import random
 import time
 from weather import get_weather
-from ncov_bs import get_ncov
+from ncov_bs import Covid
 from jokes_bs import get_joke
 from calendar_ import Calendar
 
@@ -59,11 +59,22 @@ class VoccerClient(Client):
                                      thread_type=thread_type
                                      )
                 elif 'covid' in message_text:
-                    infor = get_ncov()
-                    return self.send(Message(text=infor),
+                    covid = Covid()
+                    numbers_infor = covid.get_number_ncov()
+                    self.send(Message(text=numbers_infor),
                                      thread_id=thread_id,
                                      thread_type=thread_type
                                      )
+                    news = covid.get_news()
+                    if news:
+                        time_lines, titles, contents = news[0], news[1], news[2]
+                        for i in range(len(time_lines)):
+                            post = '\n'.join([time_lines[i], titles[i], contents[i]])
+                            self.send(Message(text=post),
+                                        thread_id=thread_id,
+                                        thread_type=thread_type
+                                        )
+                    return
                 elif 'joke' in message_text:
                     joke = get_joke()
                     return self.send(Message(text=joke),
