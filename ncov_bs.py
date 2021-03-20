@@ -20,7 +20,6 @@ class Covid():
             day = date.split('/')[0]
             month = date.split('/')[1]
             year = date.split('/')[2]
-            day = 20
             if (int(day) == datetime.now().day and int(month) == datetime.now().month and int(year) == datetime.now().year):
                 title = p.find('div', {'class': 'timeline-content'}).find_all('p')[1].get_text()
                 content = p.find('div', {'class': 'timeline-content'}).find_all('p')[2].get_text()
