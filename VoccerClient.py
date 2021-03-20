@@ -28,8 +28,7 @@ class VoccerClient(Client):
             time.sleep(sleep)
             if message_object.text:
                 message_text = message_object.text.lower()
-
-                if message_text == '/getid':
+                if message_text == 'id':
                     return self.send(Message(text=message_object.author),
                               thread_id=thread_id, thread_type=thread_type)
 
