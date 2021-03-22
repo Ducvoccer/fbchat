@@ -2,7 +2,7 @@ import json
 
 
 user_list = ['duc.nt161113@sis.hust.edu.vn', 'phimtonghop37@gmail.com', 'voccer.it@gmail.com']
-user = user_list[-1]
+user = user_list[1]
 
 with open('session/session_{}.json'.format(user), 'r') as f:
     session = json.load(f)

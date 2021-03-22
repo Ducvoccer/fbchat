@@ -22,7 +22,11 @@ class Covid():
             year = date.split('/')[2]
             if ((int(day) == datetime.now().day or int(day) + 1 == datetime.now().day) and int(month) == datetime.now().month and int(year) == datetime.now().year):
                 title = p.find('div', {'class': 'timeline-content'}).find_all('p')[1].get_text()
-                content = p.find('div', {'class': 'timeline-content'}).find_all('p')[2].get_text()
+                content_a = p.find('div', {'class': 'timeline-content'}).find_all('p')[2:]
+                content = ''
+                for c in content_a:
+                    content = content + c.get_text() + '\n'
+                    
                 time_lines.append(time_line)
                 titles.append(title)
                 contents.append(content)
@@ -40,11 +44,11 @@ class Covid():
         '\tSố ca nhiễm: {0}\n'\
         '\tĐang điều trị: {1}\n'\
         '\tKhỏi: {2}\n'\
-        '\tTử Vong: {3}\n'\
+        '\tTử vong: {3}\n'\
         'Thế giới:\n'\
         '\tSố ca nhiễm: {4}\n'\
         '\tĐang điều trị: {5}\n'\
         '\tKhỏi: {6}\n'\
-        '\tTử Vong: {7}\n'.format(numbers[0], numbers[1], numbers[2], numbers[3], numbers[4], numbers[5], numbers[6], numbers[7])
+        '\tTử vong: {7}\n'.format(numbers[0], numbers[1], numbers[2], numbers[3], numbers[4], numbers[5], numbers[6], numbers[7])
         return ncov_info
     
