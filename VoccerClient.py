@@ -92,7 +92,6 @@ class VoccerClient(Client):
                                  )
 
     def listen_custom(self, markAlive=None):
-        global time_start
         if markAlive is not None:
             self.setActiveStatus(markAlive)
 
