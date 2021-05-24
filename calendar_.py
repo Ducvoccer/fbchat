@@ -1,5 +1,4 @@
 import requests
-import os
 import datetime
 from lunarcalendar import Converter, Solar, Lunar
 
@@ -9,7 +8,7 @@ class Calendar():
         self.solar_today = datetime.date.today()
         self.lunar_today = Converter.Solar2Lunar(Solar(self.solar_today.year, self.solar_today.month, self.solar_today.day))
         try:
-            r = requests.get('https://docs.google.com/document/u/0/export?format=txt&id=1b2aQMfZvhLhqs5bnGrdNZUnOSmCGsuNZeSH8Qk6ndrg&token=AC4w5VjlljBzAvNU8CtCSnvvFwe52p-2-w%3A1589941528767&ouid=102939292131381354747&includes_info_params=true&inspectorResult=%7B%22pc%22%3A1%2C%22lplc%22%3A20%7D')
+            r = requests.get('https://docs.google.com/document/u/1/export?format=txt&id=1IhOEAR_NxDysdJJKdkzDhW6VQEnCshReO8_mynJB92s&token=AC4w5Vjy32Zj7v46kp92pRpnaRv9crJ1hA%3A1619984863716&ouid=112541721323011351705&includes_info_params=true&inspectorResult=%7B%22pc%22%3A1%2C%22lplc%22%3A12%7D')
             bir = r.text
             self.bir = bir
         except Exception as e:

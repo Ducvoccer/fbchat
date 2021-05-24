@@ -1,9 +1,7 @@
 # -*- coding: UTF-8 -*-
 from fbchat.models import *
 from fbchat import log, Client
-import datetime
 from tu_vi import TuVi
-from lunarcalendar import Converter, Solar, Lunar
 import random
 import time
 from weather import get_weather

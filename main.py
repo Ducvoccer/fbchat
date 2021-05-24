@@ -2,8 +2,6 @@
 import json
 from json.decoder import JSONDecodeError
 from VoccerClient import VoccerClient
-import time
-import sys
 
 # import logging
 # logging.basicConfig(level=logging.DEBUG)
@@ -12,7 +10,6 @@ email = list_emails[1]
 password = ''
 # user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36'
 user_agent = "Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:24.0) Gecko/20100101 Firefox/24.0"
-
 
 with open('session/session_{}.json'.format(email)) as f:
     cookiesjar = dict()
