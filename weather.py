@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 import requests
 
-api_key = '6dcccf305d39905f92566e9e23a20c49'
+api_key = '2479a2376552133d8de7d0d9dca046f4'
 
 def get_weather(location):
     location = location
@@ -11,3 +11,4 @@ def get_weather(location):
         return "Thời Tiết ở {0} là: {1}\nNhiệt độ thấp nhất: {2}°C\nNhiệt độ cao nhất: {3}°C".format(json_data['name'], json_data['weather'][0]['main'], int(json_data['main']['temp_min']-273), int(json_data['main']['temp_max']-273))
     else:
         return 'Tên thành phố không hợp lệ'
+
